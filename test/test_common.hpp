@@ -24,6 +24,7 @@
 #include <hip/hip_runtime.h>
 
 #include <cstdlib>
+#include <cstring>
 
 #define HIP_CHECK(state) ASSERT_EQ(state, hipSuccess)
 

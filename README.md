@@ -11,6 +11,28 @@ hipRAND supports [rocRAND](https://github.com/ROCm/rocRAND) and
 You can find our documentation at
 [hipRAND User Guide/](https://rocm.docs.amd.com/projects/hipRAND/en/latest/).
 
+## chipStar Support
+
+hipRAND builds and runs with [chipStar](https://github.com/chip-spv/chipStar) (HIP implementation for Intel GPUs and other SPIR-V targets).
+
+**Test Status**: 227/237 tests passing (96% pass rate)
+
+- ✅ All core functionality working
+- ✅ Kernel API tests: All passing
+- ✅ Linkage tests: All passing
+- ⚠️ MT19937 generator: 10 tests failing (chipStar/rocRAND kernel name resolution issue)
+
+**Build Requirements**:
+- `HIP/chipStar/2026.02.01` module
+- `HIP/rocRAND/2026.02.01` module
+
+**Build Command**:
+```bash
+module load HIP/chipStar/2026.02.01 HIP/rocRAND/2026.02.01
+cmake .. -DBUILD_WITH_LIB=ROCM -DCMAKE_CXX_COMPILER=$(which hipcc)
+ninja
+```
+
 ## Documentation
 
 To build our documentation, use the following commands:

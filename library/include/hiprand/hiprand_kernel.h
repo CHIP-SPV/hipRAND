@@ -106,7 +106,7 @@ typedef struct hiprandStateSobol32 hiprandStateSobol32_t;
 typedef struct hiprandStateSobol64 hiprandStateSobol64_t;
 /** @} */ // end of group hipranddevice
 
-#if defined(__HIP_PLATFORM_AMD__)
+#if defined(__HIP_PLATFORM_AMD__) || defined(__HIP_PLATFORM_SPIRV__)
     #include "hiprand/hiprand_kernel_rocm.h"
 #else
     #include "hiprand/hiprand_kernel_nvcc.h"

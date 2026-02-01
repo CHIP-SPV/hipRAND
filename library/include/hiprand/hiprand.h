@@ -74,7 +74,7 @@
 #define HIPRAND_VERSION
 #endif
 
-#if defined(__HIP_PLATFORM_AMD__)
+#if defined(__HIP_PLATFORM_AMD__) || defined(__HIP_PLATFORM_SPIRV__)
     #include "hiprand/hiprand_rocm.h"
 #elif defined(__HIP_PLATFORM_NVIDIA__)
     #include "hiprand/hiprand_nvcc.h"

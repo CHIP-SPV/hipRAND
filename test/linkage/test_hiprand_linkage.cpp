@@ -31,7 +31,7 @@
 
 TEST(hiprand_linkage_tests, get_version_test)
 {
-#ifdef __HIP_PLATFORM_AMD__
+#if defined(__HIP_PLATFORM_AMD__) || defined(__HIP_PLATFORM_SPIRV__)
     EXPECT_EQ(get_hiprand_version(), ROCRAND_VERSION);
 #else
     int curand_version;
