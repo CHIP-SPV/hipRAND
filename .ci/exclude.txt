@@ -1,0 +1,8 @@
+# CTest exclude patterns. Each entry links to an upstream issue.
+# Fix the test, then remove the entry.
+#
+# hipRAND 3/4 SEGFAULT — downstream of rocRAND IGC kernel-drop issue.
+# IGC #403: https://github.com/intel/intel-graphics-compiler/issues/403
+test_hiprand_api
+test_hiprand_cpp_wrapper
+test_hiprand_kernel
